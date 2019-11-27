@@ -5,10 +5,11 @@ require_once __DIR__ . '/Unsplash.php';
 
 class Gambar
 {
-    protected $src = __DIR__ . '/assets';
-    protected $option = array();
+    protected $src     = __DIR__ . '/assets';
+    protected $option  = array();
     protected $option2 = array();
     protected $option3 = array();
+    protected $option4 = array();
     protected $text;
     protected $query;
 
@@ -67,10 +68,10 @@ class Gambar
     public function getResult($result, $mime, $quality)
     {
         try {
-            $tele  = new \claviska\SimpleImage();
-            $fb    = new \claviska\SimpleImage();
-            $bhs   = new \claviska\SimpleImage();
-            $image = new \claviska\SimpleImage();
+            $tele     = new \claviska\SimpleImage();
+            $fb       = new \claviska\SimpleImage();
+            $bhs      = new \claviska\SimpleImage();
+            $image    = new \claviska\SimpleImage();
             $unsplash = new \Unsplash($this->query);
 
             $tele
@@ -98,12 +99,14 @@ class Gambar
                 ->overlay($fb, 'bottom left', 1, 280)
                 ->text('BlackHoleSecurity', $this->option3)
                 ->toFile($result, $mime, $quality);
+
             $return = [
                 'Exif' => $image->getExif(),
                 'Orientation' => $image->getOrientation(),
-                'Resolution' => $image->getResolution(),
+                'Resolution'  => $image->getResolution(),
                 'AspectRatio' => $image->getAspectRatio()
             ];
+
             return json_encode($return);
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
@@ -113,7 +116,7 @@ class Gambar
 try {
     $paragraf = "bihun adalah bahasa pemrograman interpretatif multiguna dengan filosofi perancangan yang berfokus pada tingkat keterbacaan kode.";
     //$paragraf = readline('text : ');
-    $draw = new Gambar($paragraf, 'Dark'); //paragraf, font, query
+    $draw = new Gambar($paragraf, 'Dark'); //paragraf, query, font
     echo $draw->getResult('result.png', 'image/png', 100) . "\n"; //result, mime, quality
 } catch (Exception $e) {
     echo $e->getMessage() . "\n";
