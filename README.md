@@ -1,7 +1,7 @@
 # simpleimage
 > Auto generate images for fanspage
 
-![](result.jpg)
+![result images](result.png)
 
 ## Installation
 
