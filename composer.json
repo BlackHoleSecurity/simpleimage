@@ -1,5 +1,6 @@
 {
     "require": {
-        "claviska/simpleimage": "^3.3"
+        "claviska/simpleimage": "^3.3",
+        "unsplash/unsplash": "^2.5"
     }
 }
