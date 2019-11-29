@@ -1,6 +1,22 @@
 {
+    "name": "bhsec/simpleimage",
+    "description": "fanspage images generator using unsplash wrapper",
+    "type": "library",
     "require": {
+        "unsplash/unsplash": "^2.5",
         "claviska/simpleimage": "^3.3",
-        "unsplash/unsplash": "^2.5"
+        "ext-gd": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cvar1984",
+            "email": "gedzsarjuncomuniti@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bhsec\\SimpleImage\\":"src/"
+        }
     }
 }
