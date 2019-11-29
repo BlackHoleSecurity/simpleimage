@@ -1,5 +1,6 @@
 <?php
 namespace Bhsec\SimpleImage;
+
 class Gambar
 {
     protected $src     = __DIR__ . '/assets';

@@ -1,5 +1,6 @@
 <?php
 namespace Bhsec\SimpleImage;
+
 class Unsplash
 {
     protected static $access_unsplash = '9e33a4b9f59c0dbb71800d9eae09377d70c0de27c815b73a508f5f35dd6494ed';
@@ -24,7 +25,7 @@ class Unsplash
         );
 
         $result = \Crew\Unsplash\Search::photos($query, self::$page, self::$per_page, self::$orientation);
-        $index=rand(0, 14);
+        $index = rand(0, 14);
         $this->result_full = $result[$index]['urls']['full'];
         $this->result_regular = $result[$index]['urls']['regular'];
         $this->result_small = $result[$index]['urls']['small'];
