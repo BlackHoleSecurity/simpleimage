@@ -2,6 +2,7 @@
     "name": "bhsec/simpleimage",
     "description": "fanspage images generator using unsplash wrapper",
     "type": "library",
+    "minimum-stability": "stable",
     "require": {
         "unsplash/unsplash": "^2.5",
         "claviska/simpleimage": "^3.3",
