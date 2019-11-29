@@ -11,7 +11,6 @@ OS X & Linux:
 git clone https://github.com/BlackHoleSecurity/simpleimage.git
 cd simpleimage
 composer install
-php index.php
 ```
 
 Windows:
@@ -24,8 +23,18 @@ composer install
 
 ## Setup
 
-Edit and config your api key at Unsplash.php
-or use default background instead
+Edit and config your api key at src/Unsplash.php
+or use default background instead src/assets
+
+## Use it on your project
+
+```php
+require __DIR__.'/vendor/autoload.php';
+use Bhsec\SimpleImage\Gambar;
+use Bhsec\SimpleImage\Unsplash;
+$draw = Gambar('Hello world', 'Dark', 'FSXE300.ttf'); // text, unsplash, font
+$draw->getResult('result.png', image/png', 100); // outname, mime, quality
+```
 
 ## Meta
 
