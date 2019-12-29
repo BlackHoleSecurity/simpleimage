@@ -3,15 +3,11 @@ namespace Bhsec\SimpleImage;
 
 class Gambar
 {
-<<<<<<< HEAD
-    protected $src = __DIR__ . '/assets';
     protected $option = array();
     protected $option2 = array();
     protected $option3 = array();
     protected $option4 = array();
-=======
     protected $src = __DIR__ . '/../assets';
->>>>>>> 04e8eddb9062fc3d29949b0699ee9ddc07f47238
     protected $text;
     protected $query;
 
@@ -112,14 +108,12 @@ class Gambar
                 'AspectRatio' => $image->getAspectRatio()
             ];
 
-<<<<<<< HEAD
             return json_encode(
                 $return,
                 JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
             );
-=======
             return json_encode($return, JSON_PRETTY_PRINT);
->>>>>>> 04e8eddb9062fc3d29949b0699ee9ddc07f47238
+          
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
