@@ -3,54 +3,63 @@ namespace Bhsec\SimpleImage;
 
 class Gambar
 {
-    protected $src     = __DIR__ . '/assets';
-    protected $option  = array();
+    protected $src = __DIR__ . '/assets';
+    protected $option = array();
     protected $option2 = array();
     protected $option3 = array();
     protected $option4 = array();
     protected $text;
     protected $query;
 
-    function __construct($text = 'hajigur', $query = 'random', $font = 'FSEX300.ttf')
+    function __construct(
+        $text = 'hajigur',
+        $query = 'random',
+        $font = 'FSEX300.ttf'
+    )
     {
-        $this->option = [ // main text
-            'color'    => 'white',
-            'size'     => 100,
-            'anchor'   => 'center',
+        $this->option = [
+            // main text
+            'color' => 'white',
+            'size' => 100,
+            'anchor' => 'center',
             'fontFile' => $this->src . '/' . $font,
-            'shadow' => [ // shadow option
-                'x'     => 15,
-                'y'     => 15,
+            'shadow' => [
+                // shadow option
+                'x' => 15,
+                'y' => 15,
                 'color' => 'black'
             ]
         ];
 
-        $this->option2 = [ // bottom text 1
-            'color'    => 'white',
-            'size'     => 50,
-            'anchor'   => 'bottom left',
+        $this->option2 = [
+            // bottom text 1
+            'color' => 'white',
+            'size' => 50,
+            'anchor' => 'bottom left',
             'fontFile' => $this->src . '/' . $font,
-            'xOffset'  => 100
+            'xOffset' => 100
         ];
 
-        $this->option3 = [ // bottom text 2
-            'color'    => 'white',
-            'size'     => 50,
-            'anchor'   => 'bottom left',
-            'xOffset'  => 405,
+        $this->option3 = [
+            // bottom text 2
+            'color' => 'white',
+            'size' => 50,
+            'anchor' => 'bottom left',
+            'xOffset' => 405,
             'fontFile' => $this->src . '/' . $font
         ];
 
-        $this->option4 = [ // top text 1
-            'color'    => 'white',
-            'size'     => 50,
-            'anchor'   => 'top right',
-            'xOffset'  => -300,
-            'yOffset'  => 140,
+        $this->option4 = [
+            // top text 1
+            'color' => 'white',
+            'size' => 50,
+            'anchor' => 'top right',
+            'xOffset' => -300,
+            'yOffset' => 140,
             'fontFile' => $this->src . '/' . $font
         ];
 
-        $this->text  = $text;
+        $this->text = $text;
         $this->query = $query;
     }
 
@@ -66,23 +75,17 @@ class Gambar
     public function getResult($result, $mime, $quality)
     {
         try {
-            $tele     = new \claviska\SimpleImage();
-            $fb       = new \claviska\SimpleImage();
-            $bhs      = new \claviska\SimpleImage();
-            $image    = new \claviska\SimpleImage();
+            $tele = new \claviska\SimpleImage();
+            $fb = new \claviska\SimpleImage();
+            $bhs = new \claviska\SimpleImage();
+            $image = new \claviska\SimpleImage();
             $unsplash = new \Bhsec\SimpleImage\Unsplash($this->query);
 
-            $tele
-                ->fromFile($this->src . '/telegram.png')
-                ->resize(70, 70);
+            $tele->fromFile($this->src . '/telegram.png')->resize(70, 70);
 
-            $fb
-                ->fromFile($this->src . '/facebook.png')
-                ->resize(90, 80);
+            $fb->fromFile($this->src . '/facebook.png')->resize(90, 80);
 
-            $bhs
-                ->fromFile($this->src . '/bhs.png')
-                ->resize(300, 300);
+            $bhs->fromFile($this->src . '/bhs.png')->resize(300, 300);
 
             $image
                 ->fromString(file_get_contents($unsplash->result_regular))
@@ -101,11 +104,14 @@ class Gambar
             $return = [
                 'Exif' => $image->getExif(),
                 'Orientation' => $image->getOrientation(),
-                'Resolution'  => $image->getResolution(),
+                'Resolution' => $image->getResolution(),
                 'AspectRatio' => $image->getAspectRatio()
             ];
 
-            return json_encode($return);
+            return json_encode(
+                $return,
+                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
+            );
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
