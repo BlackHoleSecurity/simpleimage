@@ -1,11 +1,11 @@
-# simpleimage
+# SimpleImage
 > Auto generate images for fanspage
 
 ![result images](result.png)
 
 ## Installation
 
-OS X & Linux:
+### OS X & Linux:
 
 ```sh
 git clone https://github.com/BlackHoleSecurity/simpleimage.git
@@ -13,7 +13,7 @@ cd simpleimage
 composer install
 ```
 
-Windows:
+### Windows:
 
 ```sh
 git clone https://github.com/BlackHoleSecurity/simpleimage.git
@@ -23,10 +23,10 @@ composer install
 
 ## Setup
 
-Edit and config your api key at src/Unsplash.php
-or use default background instead src/assets
+Edit and config your api key at `src/Unsplash.php`
+or use default background instead `src/assets`
 
-## Use it on your project
+## Use SimpleImage on your project
 
 ```php
 require __DIR__.'/vendor/autoload.php';
@@ -40,9 +40,9 @@ $draw->getResult('result.png', image/png', 100); // outname, mime, quality
 
 Cvar1984 – [@E13371984](https://t.me/E13371984) – gedzsarjuncomuniti@gmail.com
 
-Distributed under the MIT license. See ``LICENSE`` for more information.
+Distributed under the **MIT** license. See ``LICENSE`` for more information.
 
-[https://github.com/BlackHoleSecurity/simpleimage](https://github.com/BlackHoleSecurity/simpleimage)
+[SimpleImage](https://github.com/BlackHoleSecurity/simpleimage)
 
 ## Contributing
 

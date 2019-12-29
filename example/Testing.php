@@ -10,6 +10,6 @@ class StackTest extends TestCase
     {
         $gambar = new Gambar('Hello World', 'Dark', 'FSEX300.ttf'); // paragraf, query unsplash, font name
         $result = $gambar->getResult('result.jpg', 'image/jpeg', 50); // filename, mime, quality
-        return $result;
+        echo $result;
     }
 }
