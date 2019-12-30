@@ -112,7 +112,6 @@ class Gambar
                 $return,
                 JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
             );
-            return json_encode($return, JSON_PRETTY_PRINT);
           
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
