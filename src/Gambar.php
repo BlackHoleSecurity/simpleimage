@@ -20,9 +20,11 @@ class Gambar
         $this->option = [
             // main text
             'color' => 'white',
-            'size' => 100,
+            'size' => 88,
             'anchor' => 'center',
-            'fontFile' => $this->src . '/' . $font,
+            'fontFile' => $this->src . DIRECTORY_SEPARATOR . $font,
+            'xOffset' => 0,
+            'yOffset' => 0,
             'shadow' => [
                 // shadow option
                 'x' => 15,
@@ -36,7 +38,7 @@ class Gambar
             'color' => 'white',
             'size' => 50,
             'anchor' => 'bottom left',
-            'fontFile' => $this->src . '/' . $font,
+            'fontFile' => $this->src . DIRECTORY_SEPARATOR . $font,
             'xOffset' => 100
         ];
 
@@ -46,7 +48,7 @@ class Gambar
             'size' => 50,
             'anchor' => 'bottom left',
             'xOffset' => 405,
-            'fontFile' => $this->src . '/' . $font
+            'fontFile' => $this->src . DIRECTORY_SEPARATOR . $font
         ];
 
         $this->option4 = [
@@ -56,14 +58,14 @@ class Gambar
             'anchor' => 'top right',
             'xOffset' => -300,
             'yOffset' => 140,
-            'fontFile' => $this->src . '/' . $font
+            'fontFile' => $this->src . DIRECTORY_SEPARATOR . $font
         ];
 
         $this->text = $text;
         $this->query = $query;
     }
 
-    private function filterParagraf($paragraf, $wrap)
+    private function filterParagraf(string $paragraf, string $wrap)
     {
         $paragraf = trim($paragraf);
         $paragraf = str_replace('. ', ".\n\n", $paragraf);
@@ -72,7 +74,7 @@ class Gambar
         return $paragraf;
     }
 
-    public function getResult($result, $mime, $quality)
+    public function getResult(string $result, string $mime, int $quality)
     {
         try {
             $tele = new \claviska\SimpleImage();
@@ -92,13 +94,13 @@ class Gambar
                 ->resolution(320, 200)
                 ->resize(2016, 2016)
                 ->autoOrient()
-                ->text(self::filterParagraf($this->text, 40), $this->option)
+                ->text(Gambar::filterParagraf($this->text, 40), $this->option)
                 ->overlay($tele, 'bottom left')
                 ->text('BHSec', $this->option2)
                 ->overlay($bhs, 'top right', 0.45)
                 ->text('Did you know?', $this->option4)
                 ->overlay($fb, 'bottom left', 1, 280)
-                ->text('BlackHoleSecurity', $this->option3)
+                ->text('BHSecOfficial', $this->option3)
                 ->toFile($result, $mime, $quality);
 
             $return = [
@@ -113,7 +115,6 @@ class Gambar
                 JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
             );
             return json_encode($return, JSON_PRETTY_PRINT);
-          
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
