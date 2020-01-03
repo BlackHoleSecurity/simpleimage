@@ -94,7 +94,7 @@ class Gambar
                 ->resolution(320, 200)
                 ->resize(2016, 2016)
                 ->autoOrient()
-                ->text(Gambar::filterParagraf($this->text, 40), $this->option)
+                ->text(Gambar::filterParagraf($this->text, 50), $this->option)
                 ->overlay($tele, 'bottom left')
                 ->text('BHSec', $this->option2)
                 ->overlay($bhs, 'top right', 0.45)
