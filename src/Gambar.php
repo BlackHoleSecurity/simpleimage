@@ -68,7 +68,7 @@ class Gambar
     private function filterParagraf(string $paragraf, string $wrap)
     {
         $paragraf = trim($paragraf);
-        $paragraf = substr($paragraf, 0, 301);
+        $paragraf = mb_substr($paragraf, 0, 301, 'UTF-8');
         $paragraf = str_replace('. ', ".\n\n", $paragraf);
         $paragraf = wordwrap($paragraf, $wrap, "\n");
         $paragraf = ucwords(strtolower($paragraf));

@@ -6,7 +6,8 @@
     "require": {
         "unsplash/unsplash": "^2.5",
         "claviska/simpleimage": "^3.3",
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "ext-mbstring": "*"
     },
     "license": "MIT",
     "authors": [
