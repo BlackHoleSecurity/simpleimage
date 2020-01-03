@@ -68,6 +68,7 @@ class Gambar
     private function filterParagraf(string $paragraf, string $wrap)
     {
         $paragraf = trim($paragraf);
+        $paragraf = substr($paragraf, 0, 301);
         $paragraf = str_replace('. ', ".\n\n", $paragraf);
         $paragraf = wordwrap($paragraf, $wrap, "\n");
         $paragraf = ucwords(strtolower($paragraf));
@@ -94,7 +95,7 @@ class Gambar
                 ->resolution(320, 200)
                 ->resize(2016, 2016)
                 ->autoOrient()
-                ->text(Gambar::filterParagraf($this->text, 50), $this->option)
+                ->text(Gambar::filterParagraf($this->text, 45), $this->option)
                 ->overlay($tele, 'bottom left')
                 ->text('BHSec', $this->option2)
                 ->overlay($bhs, 'top right', 0.45)
