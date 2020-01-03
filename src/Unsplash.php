@@ -3,8 +3,8 @@ namespace Bhsec\SimpleImage;
 
 class Unsplash
 {
-    protected static $access_unsplash = '9e33a4b9f59c0dbb71800d9eae09377d70c0de27c815b73a508f5f35dd6494ed';
-    protected static $secret_unsplash = '56632e0c65b061c0235b1d4be6afe3e3ff100b4d0c082e81066bd986ea53ec8d';
+    protected const ACCESS_UNSPLASH = '9e33a4b9f59c0dbb71800d9eae09377d70c0de27c815b73a508f5f35dd6494ed';
+    protected const SECRET_UNSPLASH = '56632e0c65b061c0235b1d4be6afe3e3ff100b4d0c082e81066bd986ea53ec8d';
     protected static $page = 15;
     protected static $per_page = 15;
     protected static $orientation = 'landscape';// 'portrait';
@@ -18,13 +18,13 @@ class Unsplash
     {
         \Crew\Unsplash\HttpClient::init(
             [
-                'applicationId' => self::$access_unsplash,
-                'secret' => self::$secret_unsplash,
+                'applicationId' => Unsplash::ACCESS_UNSPLASH,
+                'secret' => Unsplash::SECRET_UNSPLASH,
                 'utmSource' => 'simpleimage'
             ]
         );
 
-        $result = \Crew\Unsplash\Search::photos($query, self::$page, self::$per_page, self::$orientation);
+        $result = \Crew\Unsplash\Search::photos($query, Unsplash::$page, Unsplash::$per_page, Unsplash::$orientation);
         $index = rand(0, 14);
         $this->result_full = $result[$index]['urls']['full'];
         $this->result_regular = $result[$index]['urls']['regular'];

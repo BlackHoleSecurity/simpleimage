@@ -85,13 +85,13 @@ class Gambar
                 ->resolution(320, 200)
                 ->resize(2016, 2016)
                 ->autoOrient()
-                ->text(self::filterParagraf($this->text, 40), $this->option)
+                ->text(Gambar::filterParagraf($this->text, 40), $this->option)
                 ->overlay($tele, 'bottom left')
                 ->text('BHSec', $this->option2)
                 ->overlay($bhs, 'top right', 0.45)
                 ->text('Did you know?', $this->option4)
                 ->overlay($fb, 'bottom left', 1, 280)
-                ->text('BlackHoleSecurity', $this->option3)
+                ->text('BHSecOfficial', $this->option3)
                 ->toFile($result, $mime, $quality);
 
             $return = [
