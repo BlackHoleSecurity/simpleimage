@@ -7,7 +7,7 @@ class Unsplash
     protected const SECRET_UNSPLASH = '56632e0c65b061c0235b1d4be6afe3e3ff100b4d0c082e81066bd986ea53ec8d';
     protected static $page = 15;
     protected static $per_page = 15;
-    protected static $orientation = 'landscape';// 'portrait';
+    protected static $orientation = 'landscape'; // 'portrait';
     public $result_full;
     public $result_regular;
     public $result_small;
@@ -24,7 +24,12 @@ class Unsplash
             ]
         );
 
-        $result = \Crew\Unsplash\Search::photos($query, Unsplash::$page, Unsplash::$per_page, Unsplash::$orientation);
+        $result = \Crew\Unsplash\Search::photos(
+            $query,
+            Unsplash::$page,
+            Unsplash::$per_page,
+            Unsplash::$orientation
+        );
         $index = rand(0, 14);
         $this->result_full = $result[$index]['urls']['full'];
         $this->result_regular = $result[$index]['urls']['regular'];
