@@ -12,7 +12,7 @@ class Gambar
     protected $query;
 
     function __construct(
-        $text = 'hajigur',
+        $text = 'Hello World',
         $query = 'random',
         $font = 'FSEX300.ttf'
     )
