@@ -1,1 +1,5 @@
 /vendor/
+!/assets/*.jpg
+/*.jpg
+/*.png
+/*.gif
