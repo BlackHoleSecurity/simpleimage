@@ -13,7 +13,7 @@ class Gambar
 
     function __construct(
         $text = 'Hello World',
-        $query = 'random',
+        $query = 'Dark',
         $font = 'FSEX300.ttf'
     )
     {
@@ -23,12 +23,12 @@ class Gambar
             'size' => 88,
             'anchor' => 'center',
             'fontFile' => $this->src . DIRECTORY_SEPARATOR . $font,
-            'xOffset' => 0,
-            'yOffset' => 0,
+            'xOffset' => -55,
+            'yOffset' => -((strlen($text)*2)-150),
             'shadow' => [
                 // shadow option
-                'x' => 15,
-                'y' => 15,
+                'x' => 12,
+                'y' => 12,
                 'color' => 'black'
             ]
         ];
@@ -53,10 +53,16 @@ class Gambar
 
         $this->option4 = [
             // top text 1
+            'shadow' => [
+                // shadow option
+                'x' => 5,
+                'y' => 5,
+                'color' => 'black'
+            ],
             'color' => 'white',
             'size' => 50,
             'anchor' => 'top right',
-            'xOffset' => -300,
+            'xOffset' => -400,
             'yOffset' => 140,
             'fontFile' => $this->src . DIRECTORY_SEPARATOR . $font
         ];
@@ -69,7 +75,7 @@ class Gambar
     {
         $paragraf = trim($paragraf);
         $paragraf = mb_substr($paragraf, 0, 301, 'UTF-8');
-        $paragraf = str_replace('. ', ".\n\n", $paragraf);
+        $paragraf = str_replace('. ', ".\n", $paragraf);
         $paragraf = wordwrap($paragraf, $wrap, "\n");
         $paragraf = ucwords(strtolower($paragraf));
         return $paragraf;
@@ -84,21 +90,21 @@ class Gambar
             $image = new \claviska\SimpleImage();
             $unsplash = new \Bhsec\SimpleImage\Unsplash($this->query);
 
-            $tele->fromFile($this->src . '/telegram.png')->resize(70, 70);
+            $tele->fromFile($this->src . '/telegram.png')->resize(80, 80);
 
-            $fb->fromFile($this->src . '/facebook.png')->resize(90, 80);
+            $fb->fromFile($this->src . '/facebook.png')->resize(100, 90);
 
-            $bhs->fromFile($this->src . '/bhs.png')->resize(300, 300);
+            $bhs->fromFile($this->src . '/bhs.png')->resize(350, 350);
 
             $image
-                ->fromString(file_get_contents($unsplash->result_regular))
+                ->fromString(file_get_contents($unsplash->regular))
                 ->resolution(320, 200)
                 ->resize(2016, 2016)
                 ->autoOrient()
-                ->text(Gambar::filterParagraf($this->text, 45), $this->option)
+                ->text(Gambar::filterParagraf($this->text, 35), $this->option)
                 ->overlay($tele, 'bottom left')
                 ->text('BHSec', $this->option2)
-                ->overlay($bhs, 'top right', 0.45)
+                ->overlay($bhs, 'top right')
                 ->text('Did you know?', $this->option4)
                 ->overlay($fb, 'bottom left', 1, 280)
                 ->text('BHSecOfficial', $this->option3)
