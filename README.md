@@ -19,10 +19,5 @@ composer install
 ```
 ## Setup
 Edit and config your api key at `src/Unsplash.php`
-## Use SimpleImage on your project
-```php
-require __DIR__.'/vendor/autoload.php';
-
-$draw = Bhsec\SimpleImage\Gambar('Hello world', 'Dark', 'FSXE300.ttf'); // text, unsplash query, font
-$draw->getResult('result.png', image/png', 100); // outname, mime, quality
-```
+## Example
+[See the example](example.php)
