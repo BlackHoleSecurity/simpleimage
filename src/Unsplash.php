@@ -14,23 +14,21 @@ class Unsplash
     public $thumb;
     public $raw;
 
-    function __construct($query)
+    public function __construct($query)
     {
-        \Crew\Unsplash\HttpClient::init(
-            [
-                'applicationId' => Unsplash::ACCESS_UNSPLASH,
-                'secret' => Unsplash::SECRET_UNSPLASH,
-                'utmSource' => 'simpleimage'
-            ]
-        );
+        \Crew\Unsplash\HttpClient::init([
+            'applicationId' => Unsplash::ACCESS_UNSPLASH,
+            'secret' => Unsplash::SECRET_UNSPLASH,
+            'utmSource' => 'simpleimage',
+        ]);
 
         $result = \Crew\Unsplash\Search::photos(
             $query,
             rand(0, 15),
-            Unsplash::$per_page,
-            Unsplash::$orientation
+            self::$per_page,
+            self::$orientation
         );
-var_dump($result);
+
         $index = rand(0, 14);
         $this->full = $result[$index]['urls']['full'];
         $this->regular = $result[$index]['urls']['regular'];
