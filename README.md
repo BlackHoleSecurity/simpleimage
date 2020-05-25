@@ -5,17 +5,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ## Installation
-### Nix
 ```sh
-git clone https://github.com/BlackHoleSecurity/simpleimage.git
-cd simpleimage
-composer install
-```
-### Windows:
-```sh
-git clone https://github.com/BlackHoleSecurity/simpleimage.git
-cd simpleimage
-composer install
+composer require bhsec/simpleimage:dev-master
 ```
 ## Setup
 Edit and config your api key at `src/Unsplash.php`
