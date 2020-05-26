@@ -8,7 +8,8 @@
         "claviska/simpleimage": "^3.3",
         "ext-gd": "*",
         "ext-mbstring": "*",
-        "mdwheele/fortune": "dev-master"
+        "mdwheele/fortune": "dev-master",
+        "pimple/pimple": "^3.3"
     },
     "license": "MIT",
     "authors": [

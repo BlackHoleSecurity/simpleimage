@@ -1,9 +1,10 @@
 <?php
+
 namespace Bhsec\SimpleImage\Templates;
 
 class QuoteTemplates extends Templates
 {
-   public static function make(array $opt)
+    public static function make(array $opt): array
     {
         $text = $opt['text'];
         $waterMark = $opt['watermark'];
@@ -14,13 +15,12 @@ class QuoteTemplates extends Templates
         $quality = $opt['result']['quality'];
 
         try {
-             $option1 = [
+            $option1 = [
                 // main text
                 'color' => 'white',
                 'size' => 130,
                 'anchor' => 'center',
-                'fontFile' =>
-                    parent::SOURCE . DIRECTORY_SEPARATOR . $font,
+                'fontFile' => parent::SOURCE . $font,
                 'xOffset' => -55,
                 'yOffset' => -(strlen($text) * 2 - 150),
                 'shadow' => [
@@ -36,8 +36,7 @@ class QuoteTemplates extends Templates
                 'color' => 'white',
                 'size' => 130,
                 'anchor' => 'center',
-                'fontFile' =>
-                    parent::SOURCE . DIRECTORY_SEPARATOR . $font,
+                'fontFile' => parent::SOURCE . $font,
                 'xOffset' => -80,
                 'yOffset' => 600,
                 'shadow' => [
@@ -47,9 +46,11 @@ class QuoteTemplates extends Templates
                     'color' => 'black',
                 ],
             ];
-            $image = new \claviska\SimpleImage();
-            $unsplash = new \Bhsec\SimpleImage\Unsplash($query);
- 
+            $container = parent::getContainer();
+            $container['query'] = $query;
+            $image = $container['image'];
+            $unsplash = $container['unsplash'];
+
             $image
                 ->fromString(file_get_contents($unsplash->regular))
                 ->resolution(320, 200)
@@ -59,17 +60,12 @@ class QuoteTemplates extends Templates
                 ->text(parent::filterParagraf($waterMark, 35), $option2)
                 ->toFile($outputName, $mime, $quality);
 
-            $return = [
+            return [
                 'Exif' => $image->getExif(),
                 'Orientation' => $image->getOrientation(),
                 'Resolution' => $image->getResolution(),
                 'AspectRatio' => $image->getAspectRatio(),
             ];
-
-            return json_encode(
-                $return,
-                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
-            );
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
