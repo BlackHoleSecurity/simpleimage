@@ -18,4 +18,4 @@ $optionQuote = [
 ];
 
 $status = Bhsec\SimpleImage\Templates\QuoteTemplates::make($optionQuote);
-echo $status;
+var_dump($status);
