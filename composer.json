@@ -7,7 +7,8 @@
         "unsplash/unsplash": "^2.5",
         "claviska/simpleimage": "^3.3",
         "ext-gd": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "mdwheele/fortune": "dev-master"
     },
     "license": "MIT",
     "authors": [

@@ -2,18 +2,20 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$paragraf = 'bihun adalah bahasa pemrograman interpretatif multiguna dengan filosofi perancangan yang berfokus pada tingkat keterbacaan kode.';
-$query = 'Dark';
-$option = [
+$paragraf = \Wheeler\Fortune\Fortune::make();
+$query = 'Cyberpunk';
+$waterMark = 'Cvar1984';
+$optionQuote = [
     'text' => $paragraf,
+    'watermark' => $waterMark,
     'query' => $query,
-    'font' => 'FSEX300.ttf',
+    'font' => 'Shadow Brush.ttf',
     'result' => [
-        'output' => 'result.jpg',
+        'output' => 'quote.jpg',
         'mime' => 'image/jpeg',
         'quality' => 100
     ]
 ];
 
-$status = Bhsec\SimpleImage\Templates\BhsecTemplates::make($option);
+$status = Bhsec\SimpleImage\Templates\QuoteTemplates::make($optionQuote);
 echo $status;

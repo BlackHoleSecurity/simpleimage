@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5175c291234465a3b4bbff1ddd5167b0",
+    "content-hash": "0302c48644ad5660a199e32ad89b4268",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -407,6 +407,54 @@
             "time": "2018-11-22T18:33:57+00:00"
         },
         {
+            "name": "mdwheele/fortune",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mdwheele/fortune.git",
+                "reference": "4a190f39d99603e813ffc0260efb72fccb9f8a47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mdwheele/fortune/zipball/4a190f39d99603e813ffc0260efb72fccb9f8a47",
+                "reference": "4a190f39d99603e813ffc0260efb72fccb9f8a47",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Wheeler\\Fortune": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dustin Wheeler",
+                    "email": "mdwheele@ncsu.edu",
+                    "homepage": "http://www.dustinwheeler.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A fortune-teller for PHP.",
+            "homepage": "http://github.com/mdwheele/fortune",
+            "keywords": [
+                "fortune",
+                "fun",
+                "funny"
+            ],
+            "time": "2013-07-20T04:26:16+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -604,11 +652,15 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mdwheele/fortune": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "ext-mbstring": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
