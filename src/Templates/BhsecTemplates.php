@@ -20,7 +20,7 @@ class BhsecTemplates extends Templates
                 'size' => 88,
                 'anchor' => 'center',
                 'fontFile' => parent::SOURCE . $font,
-                'xOffset' => -55,
+                'xOffset' => -30,
                 'yOffset' => -(strlen($text) * 2 - 150),
                 'shadow' => [
                     // shadow option
@@ -70,14 +70,14 @@ class BhsecTemplates extends Templates
             $fb = $container['image'];
             $bhs = $container['image'];
             $image = $container['image'];
-            $unsplash = $container['unsplash'];
+            $unsplash = $container['unsplash_regular'];
 
             $tele->fromFile(parent::SOURCE . 'telegram.png')->resize(80, 80);
             $fb->fromFile(parent::SOURCE . 'facebook.png')->resize(100, 90);
             $bhs->fromFile(parent::SOURCE . 'bhs.png')->resize(350, 350);
 
             $image
-                ->fromString(file_get_contents($unsplash->regular))
+                ->fromString($unsplash)
                 ->resolution(320, 200)
                 ->resize(2016, 2016)
                 ->autoOrient()

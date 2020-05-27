@@ -21,7 +21,7 @@ class QuoteTemplates extends Templates
                 'size' => 130,
                 'anchor' => 'center',
                 'fontFile' => parent::SOURCE . $font,
-                'xOffset' => -55,
+                'xOffset' => -30,
                 'yOffset' => -(strlen($text) * 2 - 150),
                 'shadow' => [
                     // shadow option
@@ -37,7 +37,7 @@ class QuoteTemplates extends Templates
                 'size' => 130,
                 'anchor' => 'center',
                 'fontFile' => parent::SOURCE . $font,
-                'xOffset' => -80,
+                'xOffset' => -30,
                 'yOffset' => 600,
                 'shadow' => [
                     // shadow option
@@ -49,10 +49,10 @@ class QuoteTemplates extends Templates
             $container = parent::getContainer();
             $container['query'] = $query;
             $image = $container['image'];
-            $unsplash = $container['unsplash'];
+            $unsplash = $container['unsplash_small'];
 
             $image
-                ->fromString(file_get_contents($unsplash->regular))
+                ->fromString($unsplash)
                 ->resolution(320, 200)
                 ->resize(2016, 2016)
                 ->autoOrient()
