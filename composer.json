@@ -10,7 +10,8 @@
         "ext-gd": "*",
         "ext-mbstring": "*",
         "mdwheele/fortune": "dev-master",
-        "pimple/pimple": "^3.3"
+        "pimple/pimple": "^3.3",
+        "vlucas/phpdotenv": "^5.4"
     },
     "license": "MIT",
     "authors": [
