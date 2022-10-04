@@ -8,7 +8,7 @@ if (!isset($argv[1])) {
     $paragraf = $argv[1];
 }
 
-$query = 'Cyberpunk';
+$query = 'Dark';
 $waterMark = 'Cvar1984';
 $optionQuote = [
     'text' => $paragraf,
