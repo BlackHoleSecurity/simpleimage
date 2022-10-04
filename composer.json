@@ -4,6 +4,7 @@
     "type": "library",
     "minimum-stability": "stable",
     "require": {
+	"php":"7.*",
         "unsplash/unsplash": "^2.5",
         "claviska/simpleimage": "^3.3",
         "ext-gd": "*",
