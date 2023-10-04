@@ -4,7 +4,7 @@ namespace Bhsec\SimpleImage;
 
 class Unsplash
 {
-    private $unsplashAccess; 
+    private $unsplashAccess;
     private $unsplashSecret;
     protected static $per_page = 15;
     protected static $orientation = 'landscape'; // 'portrait';
@@ -17,9 +17,9 @@ class Unsplash
 
     public function __construct($query)
     {
-	\Dotenv\Dotenv::createImmutable(__DIR__. '/..')->safeLoad();
-	$this->unsplashAccess = $_ENV['ACCESS_UNSPLASH'];
-	$this->unsplashSecret = $_ENV['SECRET_UNSPLASH'];
+        \Dotenv\Dotenv::createImmutable(__DIR__ . '/..')->safeLoad();
+        $this->unsplashAccess = $_ENV['ACCESS_UNSPLASH'];
+        $this->unsplashSecret = $_ENV['SECRET_UNSPLASH'];
 
         \Crew\Unsplash\HttpClient::init([
             'applicationId' => $this->unsplashAccess,
@@ -42,3 +42,4 @@ class Unsplash
         $this->raw = $result[$index]['urls']['raw'];
     }
 }
+
