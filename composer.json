@@ -9,7 +9,7 @@
         "claviska/simpleimage": "^3.3",
         "ext-gd": "*",
         "ext-mbstring": "*",
-        "mdwheele/fortune": "dev-master",
+        "cvar1984/fortune": "dev-main",
         "pimple/pimple": "^3.3",
         "vlucas/phpdotenv": "^5.4"
     },
@@ -17,7 +17,7 @@
     "authors": [
         {
             "name": "Cvar1984",
-            "email": "gedzsarjuncomuniti@gmail.com"
+            "email": "cvar1984@cvar1984.my.id"
         }
     ],
     "autoload": {
