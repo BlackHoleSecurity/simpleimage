@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68ae5757fed6494867773396f2fb70e5",
+    "content-hash": "f4f2346a77a46fe8e7472fbfcbcce945",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -54,6 +54,53 @@
                 }
             ],
             "time": "2022-12-12T14:31:53+00:00"
+        },
+        {
+            "name": "cvar1984/fortune",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cvar1984/Fortune.git",
+                "reference": "d2234169395274c58df70dd7799a91951029bcf7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cvar1984/Fortune/zipball/d2234169395274c58df70dd7799a91951029bcf7",
+                "reference": "d2234169395274c58df70dd7799a91951029bcf7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cvar1984\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bellatrix Lugosi",
+                    "email": "cvar1984@cvar1984.my.id",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fortune teller",
+            "keywords": [
+                "fortune",
+                "keyword",
+                "random"
+            ],
+            "support": {
+                "issues": "https://github.com/Cvar1984/Fortune/issues",
+                "source": "https://github.com/Cvar1984/Fortune/tree/main"
+            },
+            "time": "2023-10-05T08:01:39+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -599,59 +646,6 @@
                 "source": "https://github.com/thephpleague/oauth2-client/tree/2.7.0"
             },
             "time": "2023-04-16T18:19:15+00:00"
-        },
-        {
-            "name": "mdwheele/fortune",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mdwheele/fortune.git",
-                "reference": "4a190f39d99603e813ffc0260efb72fccb9f8a47"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mdwheele/fortune/zipball/4a190f39d99603e813ffc0260efb72fccb9f8a47",
-                "reference": "4a190f39d99603e813ffc0260efb72fccb9f8a47",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "*",
-                "phpunit/phpunit": "3.7.*"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Wheeler\\Fortune": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dustin Wheeler",
-                    "email": "mdwheele@ncsu.edu",
-                    "homepage": "http://www.dustinwheeler.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A fortune-teller for PHP.",
-            "homepage": "http://github.com/mdwheele/fortune",
-            "keywords": [
-                "fortune",
-                "fun",
-                "funny"
-            ],
-            "support": {
-                "issues": "https://github.com/mdwheele/fortune/issues",
-                "source": "https://github.com/mdwheele/fortune/tree/master"
-            },
-            "time": "2013-07-20T04:26:16+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1628,7 +1622,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "mdwheele/fortune": 20
+        "cvar1984/fortune": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
